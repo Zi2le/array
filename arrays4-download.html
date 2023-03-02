@@ -38,9 +38,10 @@
 
     const para1 = document.createElement('p');
     birds.splice(2,1)
-   let eBirds = ["Eagles","Emus","Egrets"]
+  //  let eBirds = ["Eagles" ,"Emus" ,"Egrets"]
+  let eBirds = birds.filter(bird => bird.startsWith ("E"))
     para1.textContent = eBirds;
-
+   
     section.appendChild(para1);
   </script>
 
