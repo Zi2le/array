@@ -28,7 +28,7 @@
 
   </body>
   <script>
-    let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
+    const myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
 
     // Add your code here
 
@@ -37,23 +37,40 @@
     const section = document.querySelector('section');
 
     let para1 = document.createElement('p');
+   
     myArray.pop()
 myArray.push("money","cash")
 
- myArray[0] = ["Ryu (0) "]
- myArray[2] = ["Ken (1) "]
- myArray[3] = ["Chun-Li (2) "]
- myArray[4] = ["Cammy (3) "]
- myArray[5] = ["Guile (4) "]
- myArray[6] = ["Sakura (5) "]
-  myArray[7] = ["Sagat (6) "]
- myArray[8] = ["Juri (8) "]
- myArray[9] = ["Money (9) "]
-  myArray[10] = ["Cash(10) "]
-   let myString = myArray.join("-")
-    para1.textContent = myString;
+//  myArray[0] = ["Ryu (0) "]
+//  myArray[2] = ["Ken (1) "]
+//  myArray[3] = ["Chun-Li (2) "]
+//  myArray[4] = ["Cammy (3) "]
+//  myArray[5] = ["Guile (4) "]
+//  myArray[6] = ["Sakura (5) "]
+//   myArray[7] = ["Sagat (6) "]
+//  myArray[8] = ["Juri (8) "]
+//  myArray[9] = ["Money (9) "]
+//   myArray[10] = ["Cash(10) "]
 
+ let arr =  myArray.map(e => `${e} (${myArray.indexOf(e)})`)
+//  for (const item of myArray) {arr.push(`${item} (${myArray.indexOf(item)})`)
+  
+ 
+   let myString = arr.join(" - ")
+    para1.textContent = myString;
     section.appendChild(para1);
+    
+    let para2 = document.createElement('p')
+    
+
+    // myArray.map( (items =>) {
+    //   console.log( `${items}  ${myArray.indexOf(items)}`)
+    // }
+     let arrr = myArray.map(item => `${item} (${myArray.indexOf(item)})`).join(" - ")
+    
+    para2.textContent = arrr
+    
+    section.appendChild(para2)
   </script>
 
 </html>
